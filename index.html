@@ -4,105 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BruCosta Fotografia</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&family=Cinzel&family=Parisienne&display=swap" rel="stylesheet">
-    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&family=Cinzel&family=Parisienne&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
             background-color: #fff;
             color: #333;
-            padding: 0;
         }
 
         .hero {
-            background: url('Abertura.jpeg') no-repeat center center/cover;
             width: 100%;
             height: 100vh;
+            background: url('Abertura.jpeg') no-repeat center center/cover;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            justify-content: center;
+            flex-direction: column;
             color: #fff;
-            padding: 20px;
+            text-align: center;
         }
 
         .hero h1 {
+            border: 10px solid #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
             font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            border: 5px solid #fff;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
+            font-size: 78px;
         }
 
         .hero p {
+            font-size: 47px;
             font-family: 'Dancing Script', cursive;
-            font-size: 22px;
         }
 
         .section {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 20px;
-            margin: 30px 0;
+            justify-content: center;
+            padding: 100px 5%;
+            height: 100vh;
         }
 
         .section img {
-            width: 90%;
-            height: auto;
+            width: 50%;
+            height: 100%;
             object-fit: cover;
             border-radius: 10px;
         }
 
         .section-text {
+            width: 50%;
             text-align: center;
-            margin-top: 15px;
+            padding-left: 20px;
         }
 
         .section h2 {
             font-family: 'Cinzel', serif;
-            font-size: 24px;
+            font-size: 52px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .section p {
             font-family: 'Parisienne', cursive;
-            font-size: 18px;
+            font-size: 55px;
             line-height: 1.5;
         }
 
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Ajustes para mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 60px;
+                border-width: 5px;
+                padding: 15px;
+            }
+
+            .hero p {
+                font-size: 30px;
+            }
+
+            .section {
+                flex-direction: column;
+                height: auto;
+                padding: 50px 5%;
+            }
+
+            .section img {
+                width: 90%;
+                height: auto;
+            }
+
+            .section-text {
+                width: 100%;
+                padding-left: 0;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+
+            .section p {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 25px;
+            }
+
+            .section img {
+                width: 100%;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+        }
+
+        /* Botões no final da página */
         .button-container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
+            padding: 20px;
+            flex-wrap: wrap;
         }
 
         .button {
             background-color: #333;
             color: #fff;
-            padding: 12px 24px;
             font-size: 18px;
+            padding: 15px 30px;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            cursor: pointer;
+            gap: 10px;
             transition: background-color 0.3s;
         }
 
@@ -113,14 +185,6 @@
         .button i {
             font-size: 20px;
         }
-
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
@@ -130,7 +194,7 @@
     </div>
 
     <section class="section" id="casamento">
-        <img src="casamento.jpeg" alt="Casamento">
+        <img src="Casamento.jpeg" alt="Casamento">
         <div class="section-text">
             <h2>Casamento</h2>
             <p>O casamento é o início de uma nova jornada. Registre esse dia único e guarde para sempre a emoção desse momento especial.</p>
@@ -141,7 +205,7 @@
         <img src="pre.jpeg" alt="Pré-Wedding">
         <div class="section-text">
             <h2>Pré-Wedding</h2>
-            <p>O Pré-Wedding é a chance de capturar o brilho da espera, a emoção do amor antes do 'sim'. Momentos únicos que contarão a história do início de uma nova jornada juntos.</p>
+            <p>O Pré-Wedding é a chance de capturar o brilho da espera, a emoção do amor antes do 'sim'.</p>
         </div>
     </section>
 
@@ -157,21 +221,18 @@
         <img src="Familia.jpeg" alt="Família">
         <div class="section-text">
             <h2>Família</h2>
-            <p>Os momentos em família são os mais preciosos. Guarde para sempre os sorrisos, abraços e a conexão entre aqueles que mais ama.</p>
+            <p>Os momentos em família são os mais preciosos. Guarde para sempre os sorrisos e abraços.</p>
         </div>
     </section>
 
-    <!-- Botões no final da página -->
+    <!-- Botões -->
     <div class="button-container">
-        <!-- Orçamento -->
         <a href="https://forms.gle/seulinkdofomulario" target="_blank" class="button">
             <i class="fas fa-file-alt"></i> Orçamento
         </a>
-        <!-- Contato -->
         <a href="https://api.whatsapp.com/send?phone=seunumerowhatsapp" target="_blank" class="button">
             <i class="fab fa-whatsapp"></i> Contato
         </a>
-        <!-- Instagram -->
         <a href="https://www.instagram.com/seuusuario" target="_blank" class="button">
             <i class="fab fa-instagram"></i> Instagram
         </a>
