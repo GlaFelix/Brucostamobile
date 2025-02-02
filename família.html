@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensaio em Família - BruCosta Fotografia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6f61, #ffcc00);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 56px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Centralizando e estilizando os botões */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espaçamento entre os botões */
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+         .button {
+            padding: 10px 10px;
+            background-color: #ff3366;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #ff6699;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        /* Estilização do botão "Voltar para Galeria" */
+        .back-btn {
+            background-color: #ff3366;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            background-color: #ff6699;
+        }
+
+        /* Estilização do botão "X" */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.2);
+            color: #ff6699;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function goBackAndRefresh() {
+            window.location.href = "#";  // Remove o hash
+            location.reload();  // Faz o refresh da página
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Ensaio em Família - BruCosta Fotografia</h1>
+    </div>
+
+    <!-- Galeria de Imagens -->
+    <div class="gallery">
+        <a href="#img1"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 1"></a>
+        <a href="#img2"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2"></a>
+        <a href="#img3"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 3"></a>
+        <a href="#img4"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 4"></a>
+        <a href="#img5"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 5"></a>
+        <a href="#img6"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 6"></a>
+        <a href="#img7"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 7"></a>
+        <a href="#img8"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 8"></a>
+        <a href="#img9"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 9"></a>
+        <a href="#img10"><img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 10"></a>
+    </div>
+
+    <!-- Botões Centralizados -->
+    <div class="button-container">
+        <a href="https://www.instagram.com/brucostafotografia/" target="_blank" class="button">
+            <i class="fab fa-instagram"></i> Ver Mais no Instagram
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCJ9HHUGII1M7oA1uqST1QoUys1YOGHqAqdG5SSG5y_lXSUQ/viewform" target="_blank" class="button">Vamos conversar?</a>
+    </div>
+
+    <!-- Botão para voltar para página inicial -->
+    <div class="button-container">
+        <a href="index.html" class="button">Voltar para página inicial</a>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="img1" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 1">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img2" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img3" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img4" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img5" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img6" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img7" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img8" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img9" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+    <div id="img10" class="lightbox">
+        <button class="close-btn" onclick="location.href='#'">&times;</button>
+        <img src="Imagens\familia\Familia.jpeg" alt="Ensaio em Família 2">
+        <button class="back-btn" onclick="goBackAndRefresh()">Voltar para Galeria</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BruCosta Fotografia</p>
+    </footer>
+
+</body>
+</html>
